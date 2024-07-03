@@ -7,48 +7,48 @@ public class Main {
         // Initial text operations
         textEditor.appendText("Hello, "); // Appending Hello, to textEditor
         careTaker.save(textEditor);
-        System.out.println("Text after append: " + textEditor.getText()); // Output: Hello,
+        System.out.println("Text after append: " + textEditor.getText());
 
         textEditor.appendText("World!"); // Appending World! to textEditor
         careTaker.save(textEditor);
-        System.out.println("Text after append: " + textEditor.getText()); // Output: Hello, World!
+        System.out.println("Text after append: " + textEditor.getText());
 
         textEditor.appendText(" This is a text editor."); // Appending This is a text editor. to textEditor
-        System.out.println("Text after append: " + textEditor.getText()); // Output: Hello, World! This is a text editor.
+        System.out.println("Text after append: " + textEditor.getText());
 
         careTaker.undo(textEditor);
-        System.out.println("Text after undo: " + textEditor.getText()); // Output: Hello, World!
+        System.out.println("Text after undo: " + textEditor.getText());
 
         careTaker.undo(textEditor);
-        System.out.println("Text after undo: " + textEditor.getText()); // Output: Hello,
+        System.out.println("Text after undo: " + textEditor.getText());
 
         careTaker.redo(textEditor);
-        System.out.println("Text after redo: " + textEditor.getText()); // Output: Hello, World!
+        System.out.println("Text after redo: " + textEditor.getText());
 
         careTaker.redo(textEditor);
-        System.out.println("Text after redo: " + textEditor.getText()); // Output: Hello, World! This is a text editor.
+        System.out.println("Text after redo: " + textEditor.getText());
 
         careTaker.undo(textEditor);
-        System.out.println("Text after undo: " + textEditor.getText()); // Output: Hello, World!
+        System.out.println("Text after undo: " + textEditor.getText());
         careTaker.save(textEditor);
 
-        textEditor.appendText(" This has overwritten the previous text."); // Appending This has overwritten the previous text. to textEditor
+        textEditor.appendText(" This is new text."); // Appending This has overwritten the previous text. to textEditor
         careTaker.save(textEditor);
-        System.out.println("Text after append: " + textEditor.getText()); // Output: Hello, World! This has overwritten the previous text.
+        System.out.println("Text after append: " + textEditor.getText());
 
-        textEditor.appendText(" Let's undo.");
-        System.out.println("Text after append: " + textEditor.getText()); // Output: Hello, World! This has overwritten the previous text. Let's undo.
-
-        careTaker.undo(textEditor);
-        System.out.println("Text after undo: " + textEditor.getText()); // Output: Hello, World! This has overwritten the previous text.
+        textEditor.appendText(" Let's undo."); // Appending Let's undo tp textEditor
+        System.out.println("Text after append: " + textEditor.getText());
 
         careTaker.undo(textEditor);
-        System.out.println("Text after undo: " + textEditor.getText()); // Output: Hello, World!
+        System.out.println("Text after undo: " + textEditor.getText());
+
+        careTaker.undo(textEditor);
+        System.out.println("Text after undo: " + textEditor.getText());
 
         careTaker.redo(textEditor);
-        System.out.println("Text after redo: " + textEditor.getText()); // Output: Hello, World! This has overwritten the previous text.
+        System.out.println("Text after redo: " + textEditor.getText());
 
         careTaker.redo(textEditor);
-        System.out.println("Text after redo: " + textEditor.getText()); // Output: Hello, World! This has overwritten the previous text. Let's undo.
+        System.out.println("Text after redo: " + textEditor.getText());
     }
 }
